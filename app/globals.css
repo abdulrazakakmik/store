@@ -13,6 +13,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-primary: var(--font-bebas-neue);
+  --color-primary: #2E18A0;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,5 +26,11 @@
 @layer components {
   .search{
     @apply bg-gray-100 pl-9 py-2 rounded-full lg:rounded-none lg:py-4 lg:bg-white lg:border-2 lg:placeholder:text-right lg:pr-6 lg:border-gray-300 outline-none text-sm placeholder-gray-500 focus:ring-1 focus:ring-gray-300 
+  }
+  .link{
+    @apply hover:text-blue-700 hover:underline hover:underline-offset-4
+  }
+  .basket{
+    @apply flex bg-primary text-white cursor-pointer hover:opacity-90 transition-all duration-300 p-4 flex-row-reverse gap-2 relative
   }
 }

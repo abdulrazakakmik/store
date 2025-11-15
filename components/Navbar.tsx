@@ -17,7 +17,6 @@ const links = [
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
-    const [active, setActive] = useState('');
     return (
         <header className="relative z-50">
             <div className='hidden text-white text-xs p-4 items-center justify-between md:flex bg-linear-to-r from-[#8712A1] to-[#2F17A0]'>
@@ -47,9 +46,10 @@ const Navbar = () => {
                     <Menu onClick={() => setOpen(true)} className="cursor-pointer lg:hidden hover:opacity-60 transition" size={22} />
                     <div className='hidden lg:flex lg:flex-row-reverse gap-2'>
                         <button>
-                            <Settings onClick={() => setOpen(true)} className="cursor-pointer text-white p-1 bg-gray-400 size-8 hover:opacity-60 transition" size={22} />
+                            <Settings onClick={() => setOpen(true)} className="cursor-pointer text-white p-2 bg-gray-400 size-14 hover:opacity-60" size={10} />
                         </button>
-                        <button className='flex bg-[#2E18A0] text-white cursor-pointer hover:opacity-90 transition-all duration-300 py-2 px-4 flex-row-reverse gap-2'>
+                        <button className='basket'>
+                            <span className='absolute size-6 text-green-400 bg-white rounded-full -top-3 right-7 flex items-center justify-center'>0</span>
                             <ShoppingBasket />
                             <p>السلة الخاصة بي</p>
                         </button>
@@ -59,7 +59,7 @@ const Navbar = () => {
                 <div className="flex-1 items-center lg:justify-end flex relative mx-4">
                     <div className='relative flex items-center'>
                         <Search size={18} className="absolute left-3 text-[#8712A1]" />
-                        <input type="text" placeholder="Search" className="search w-md" />
+                        <input type="text" placeholder="Search" className="search xs:w-xs sm:w-md" />
                     </div>
                 </div>
 

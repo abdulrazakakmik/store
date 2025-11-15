@@ -1,42 +1,18 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import {
-  img1,
-  img2,
-  img3,
-  img4,
-  img5,
-  img6,
-  img7,
-  img8,
-  img9,
-  img10,
-  img11,
-  img12,
-  img13,
-  img14,
-  img15,
-} from "@/public/images2/second_section";
 
-const sections = [
-  { image: img4, title: "الالكترونيات", href: "/electronics" },
-  { image: img1, title: "مكياج", href: "/makeup" },
-  { image: img2, title: "السوبر ماركت", href: "/supermarket" },
-  { image: img3, title: "العروض و التخفيضات", href: "/offers" },
-  { image: img8, title: "حقائب", href: "/bags" },
-  { image: img9, title: "البيت و المطبخ", href: "/home-kitchen" },
-  { image: img6, title: "موبايلات و تابليت", href: "/mobiles" },
-  { image: img5, title: "العناية الشخصية", href: "/personal-care" },
-  { image: img10, title: "أدوات رياضية", href: "/sports" },
-  { image: img11, title: "الثقافة و الفن", href: "/art-culture" },
-  { image: img12, title: "عطور", href: "/perfumes" },
-  { image: img7, title: "موضة و اكسسوارات", href: "/fashion" },
-  { image: img13, title: "الطاقة البديلة و المنظمات", href: "/energy" },
-  { image: img14, title: "الأدوات الطبية", href: "/medical" },
-  { image: img15, title: "الأدوات الصناعية", href: "/industrial" },
-];
+interface Sections {
+  img: StaticImageData,
+  title: string,
+  href: string,
+}
 
-const Section2 = () => {
+interface Props {
+  sections: Sections[]
+}
+
+
+const Section2 = ({sections}: Props) => {
   return (
     <section className="w-full py-6 bg-white">
       <div className="max-w-6xl mx-auto grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8 gap-6 justify-items-center">
@@ -48,7 +24,7 @@ const Section2 = () => {
           >
             <div className="relative w-24 h-24 rounded-full border border-gray-200 shadow-sm transition-transform duration-500 group-hover:scale-105">
               <Image
-                src={section.image}
+                src={section.img}
                 alt={section.title}
                 fill
                 sizes="96px"
