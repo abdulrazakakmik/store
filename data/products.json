@@ -1,0 +1,74 @@
+{
+    "glasses": [
+        {
+            "id": 1,
+            "images": [
+                { "img": "images2/glasses/img1.jpg" },
+                { "img": "@/public/images2/glasses/img2.jpg" }
+            ],
+            "title": "this is title",
+            "simple_description": "this is discription",
+            "review": 5,
+            "price": 154000,
+            "available": true,
+            "description": {
+                "brand": "raipan",
+                "model": "model"
+            }
+        }
+    ],
+    "makeups": [
+        {
+            "id": 1,
+            "images": [
+                { "img": "@/public/images2/makeup/img1.jpg" },
+                { "img": "@/public/images2/makeup/img2.jpg" }
+            ],
+            "title": "this is title",
+            "simple_description": "this is discription",
+            "review": 5,
+            "price": 154000,
+            "available": true,
+            "description": {
+                "brand": "",
+                "model": ""
+            }
+        }
+    ],
+    "phones": [
+        {
+            "id": 1,
+            "images": [
+                { "img": "@/public/images2/phone/img1.jpg" },
+                { "img": "@/public/images2/phone/img2.jpg" }
+            ],
+            "title": "this is title",
+            "simple_description": "this is discription",
+            "review": 5,
+            "price": 154000,
+            "available": true,
+            "description": {
+                "brand": "",
+                "model": ""
+            }
+        }
+    ],
+    "shoes": [
+        {
+            "id": 1,
+            "images": [
+                { "img": "@/public/images2/shoes/img1.jpg" },
+                { "img": "@/public/images2/shoes/img2.jpg" }
+            ],
+            "title": "this is title",
+            "simple_description": "this is discription",
+            "review": 5,
+            "price": 154000,
+            "available": true,
+            "description": {
+                "brand": "",
+                "model": ""
+            }
+        }
+    ]
+}

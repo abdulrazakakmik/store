@@ -4,17 +4,17 @@ import Link from 'next/link'
 import Marquee from "react-fast-marquee"
 
 interface Product {
-  img: StaticImageData
-  title: string
-  cost: number
-  discount: number
+    img: StaticImageData
+    title: string
+    cost: number
+    discount: number
 }
 
 interface Props {
-  header: string
-  products: Product[]
-  direction: ('left' | 'right' | 'up' | 'down')
-  links: (true | false),
+    header: string
+    products: Product[]
+    direction: ('left' | 'right' | 'up' | 'down')
+    links: (true | false),
 }
 
 const Offer = ({ header, products, direction='left', links=false }: Props) => {
@@ -35,7 +35,7 @@ const Offer = ({ header, products, direction='left', links=false }: Props) => {
                             <div className="relative w-full h-64 rounded-2xl overflow-hidden">
                                 {
                                     links 
-                                    ? <Link href={`/shoes/${product.id}`}><Image src={product.img} alt={product.title} fill className="object-cover max-h-64 rounded-2xl" sizes="80px" /></Link>
+                                    ? <Link href={`${product.link}`}><Image src={product.img} alt={product.title} fill className="object-cover max-h-64 rounded-2xl" sizes="80px" /></Link>
                                     : <Image src={product.img} alt={product.title} fill className="object-cover max-h-64 rounded-2xl" sizes="80px" />
                                 }
                                 <span className="absolute bg-red-500 text-white flex flex-row-reverse gap-1 text-xs right-2 top-2 rounded-tl-2xl rounded-br-2xl px-2 py-0.5">

@@ -2,6 +2,7 @@ import { Star } from 'lucide-react'
 import Image, { StaticImageData } from 'next/image'
 import {img1, img2, img3, img4, img5, img6, img7, img8, img9} from '@/public/images2/brands/index'
 import Carousel from './Carousel'
+import Link from 'next/link'
 
 interface Product {
   img: StaticImageData
@@ -63,16 +64,21 @@ const Section4 = ({header="Products", products, show=false, two=false, header2='
 
                                 return (
                                     <div key={index} className="border border-gray-300 rounded-2xl relative bg-white">
-                                        <div className="relative w-full h-64 rounded-t-2xl overflow-hidden">
-                                            <Image src={product.img} alt={product.title} fill className="object-cover max-h-64 rounded-t-2xl" sizes="80px" />
+                                        <div className="relative w-full h-64 rounded-t-2xl group overflow-hidden">
+                                            <Link href={product.link}><Image src={product.img} alt={product.title} fill className="object-cover max-h-64 rounded-t-2xl hover:rounded-2xl group-hover:rounded-2xl transition-all duration-300 shadow-2xl hover:scale-90" sizes="80px" /></Link>
                                             <span className="absolute bg-red-500 text-white flex flex-row-reverse gap-1 text-xs right-2 top-2 rounded-tl-2xl rounded-br-2xl px-2 py-0.5">
                                                 {Number(discountAmount.toFixed(0)).toLocaleString()} <span>ل.س</span>
                                             </span>
                                         </div>
 
                                         <div className="mt-4 space-y-1 p-2">
-                                            <p className="text-md text-gray-600 line-clamp-1"> {product.title} </p>
-                                            <p className="text-orange-700 font-bold flex flex-row-reverse text-sm"> {Number(discountedPrice.toFixed(0)).toLocaleString()} <span>ل.س</span> </p>
+                                            <Link className='group' href={product.link}>
+                                                <p className="text-md p-1 text-gray-600 w-fit line-clamp-1 relative"> 
+                                                    <span className='absolute bottom-2 w-0 transition-all duration-300 h-0.5 bg-black group-hover:w-full group-hover:bottom-0'></span>
+                                                    {product.title} 
+                                                </p>
+                                            </Link>
+                                            <p className="text-orange-700 mt-2 font-bold flex flex-row-reverse text-sm"> {Number(discountedPrice.toFixed(0)).toLocaleString()} <span>ل.س</span> </p>
                                             <p className="line-through text-gray-400 text-xs" > {Number(product.cost.toFixed(0)).toLocaleString()} ل.س </p>
                                         </div>
 
@@ -82,8 +88,9 @@ const Section4 = ({header="Products", products, show=false, two=false, header2='
                                             </div>
                                             <span>Reviews 0</span>
                                         </div>
-                                        <button className='w-full hover:opacity-80 transition-all duration-300 text-white rounded-b-2xl bg-black opacity-70 p-3 cursor-pointer flex items-center justify-center text-xs'>
-                                            أضف للسلة
+                                        <button className='buy-btn group'>
+                                            <p className='z-10'>أضف للسلة</p>
+                                            <span className='h-20 w-1 rotate-45 bg-gray-300 transition-all duration-300 absolute -left-10 group-hover:left-[calc(100%+15px)]'></span>
                                         </button>
                                     </div>
                                 )
@@ -109,16 +116,21 @@ const Section4 = ({header="Products", products, show=false, two=false, header2='
 
                                             return (
                                                 <div key={index} className="border border-gray-300 rounded-2xl relative bg-white">
-                                                    <div className="relative w-full h-64 rounded-t-2xl overflow-hidden">
-                                                        <Image src={product.img} alt={product.title} fill className="object-cover max-h-64 rounded-t-2xl" sizes="80px" />
+                                                    <div className="relative w-full h-64 rounded-t-2xl group overflow-hidden">
+                                                        <Link href={product.link}><Image src={product.img} alt={product.title} fill className="object-cover max-h-64 rounded-t-2xl hover:rounded-2xl group-hover:rounded-2xl transition-all duration-300 shadow-2xl hover:scale-90" sizes="80px" /></Link>
                                                         <span className="absolute bg-red-500 text-white flex flex-row-reverse gap-1 text-xs right-2 top-2 rounded-tl-2xl rounded-br-2xl px-2 py-0.5">
                                                             {Number(discountAmount.toFixed(0)).toLocaleString()} <span>ل.س</span>
                                                         </span>
                                                     </div>
 
                                                     <div className="mt-4 space-y-1 p-2">
-                                                        <p className="text-md text-gray-600 line-clamp-1"> {product.title} </p>
-                                                        <p className="text-orange-700 font-bold flex flex-row-reverse text-sm"> {Number(discountedPrice.toFixed(0)).toLocaleString()} <span>ل.س</span> </p>
+                                                        <Link className='group' href={product.link}>
+                                                            <p className="text-md p-1 text-gray-600 w-fit line-clamp-1 relative"> 
+                                                                <span className='absolute bottom-2 w-0 transition-all duration-300 h-0.5 bg-black group-hover:w-full group-hover:bottom-0'></span>
+                                                                {product.title} 
+                                                            </p>
+                                                        </Link>
+                                                        <p className="text-orange-700 mt-2 font-bold flex flex-row-reverse text-sm"> {Number(discountedPrice.toFixed(0)).toLocaleString()} <span>ل.س</span> </p>
                                                         <p className="line-through text-gray-400 text-xs" > {Number(product.cost.toFixed(0)).toLocaleString()} ل.س </p>
                                                     </div>
 
@@ -128,8 +140,9 @@ const Section4 = ({header="Products", products, show=false, two=false, header2='
                                                         </div>
                                                         <span>Reviews 0</span>
                                                     </div>
-                                                    <button className='w-full hover:opacity-80 transition-all duration-300 text-white rounded-b-2xl bg-black opacity-70 p-3 cursor-pointer flex items-center justify-center text-xs'>
-                                                        أضف للسلة
+                                                    <button className='buy-btn group'>
+                                                        <p className='z-10'>أضف للسلة</p>
+                                                        <span className='h-20 w-1 rotate-45 bg-gray-300 transition-all duration-300 absolute -left-10 group-hover:left-[calc(100%+15px)]'></span>
                                                     </button>
                                                 </div>
                                             )
