@@ -1,74 +1,589 @@
 {
     "glasses": [
         {
-            "id": 1,
-            "images": [
-                { "img": "images2/glasses/img1.jpg" },
-                { "img": "@/public/images2/glasses/img2.jpg" }
-            ],
-            "title": "this is title",
-            "simple_description": "this is discription",
-            "review": 5,
-            "price": 154000,
-            "available": true,
-            "description": {
-                "brand": "raipan",
-                "model": "model"
-            }
+        "id": 1,
+        "images": [
+            { "img": "/images2/glasses/img1.jpg" },
+            { "img": "/images2/glasses/img2.jpg" }
+        ],
+        "title": "نظارة أنيقة رقم 1",
+        "simple_description": "نظارة خفيفة ومناسبة للاستخدام اليومي.",
+        "review": 5,
+        "price": 154000,
+        "available": true,
+        "description": {
+            "brand": "Raypan",
+            "model": "G-101"
         }
-    ],
-    "makeups": [
+        },
         {
-            "id": 1,
-            "images": [
-                { "img": "@/public/images2/makeup/img1.jpg" },
-                { "img": "@/public/images2/makeup/img2.jpg" }
-            ],
-            "title": "this is title",
-            "simple_description": "this is discription",
-            "review": 5,
-            "price": 154000,
-            "available": true,
-            "description": {
-                "brand": "",
-                "model": ""
-            }
+        "id": 2,
+        "images": [
+            { "img": "/images2/glasses/img2.jpg" },
+            { "img": "/images2/glasses/img3.jpg" }
+        ],
+        "title": "نظارة أنيقة رقم 2",
+        "simple_description": "عدسات مريحة بتصميم عصري وجذاب.",
+        "review": 4,
+        "price": 167000,
+        "available": true,
+        "description": {
+            "brand": "Raypan",
+            "model": "G-102"
+        }
+        },
+        {
+        "id": 3,
+        "images": [
+            { "img": "/images2/glasses/img3.jpg" },
+            { "img": "/images2/glasses/img4.jpg" }
+        ],
+        "title": "نظارة أنيقة رقم 3",
+        "simple_description": "مناسبة للقراءة والعمل لساعات طويلة.",
+        "review": 4,
+        "price": 120000,
+        "available": true,
+        "description": {
+            "brand": "Optix",
+            "model": "OX-310"
+        }
+        },
+        {
+        "id": 4,
+        "images": [
+            { "img": "/images2/glasses/img4.jpg" },
+            { "img": "/images2/glasses/img5.jpg" }
+        ],
+        "title": "نظارة أنيقة رقم 4",
+        "simple_description": "إطار خفيف ومقاوم للخدوش.",
+        "review": 5,
+        "price": 189000,
+        "available": true,
+        "description": {
+            "brand": "Optix",
+            "model": "OX-311"
+        }
+        },
+        {
+        "id": 5,
+        "images": [
+            { "img": "/images2/glasses/img5.jpg" },
+            { "img": "/images2/glasses/img6.jpg" }
+        ],
+        "title": "نظارة أنيقة رقم 5",
+        "simple_description": "عدسات عالية الجودة لتقليل الإجهاد البصري.",
+        "review": 4,
+        "price": 99000,
+        "available": true,
+        "description": {
+            "brand": "Vision",
+            "model": "VS-200"
+        }
+        },
+        {
+        "id": 6,
+        "images": [
+            { "img": "/images2/glasses/img6.jpg" },
+            { "img": "/images2/glasses/img7.jpg" }
+        ],
+        "title": "نظارة أنيقة رقم 6",
+        "simple_description": "تصميم مريح ومثالي للطلاب والموظفين.",
+        "review": 5,
+        "price": 113000,
+        "available": true,
+        "description": {
+            "brand": "Vision",
+            "model": "VS-201"
+        }
+        },
+        {
+        "id": 7,
+        "images": [
+            { "img": "/images2/glasses/img7.jpg" },
+            { "img": "/images2/glasses/img8.jpg" }
+        ],
+        "title": "نظارة أنيقة رقم 7",
+        "simple_description": "نظارة عملية بتصميم كلاسيكي بسيط.",
+        "review": 4,
+        "price": 145000,
+        "available": true,
+        "description": {
+            "brand": "Focus",
+            "model": "FC-11"
+        }
+        },
+        {
+        "id": 8,
+        "images": [
+            { "img": "/images2/glasses/img8.jpg" },
+            { "img": "/images2/glasses/img9.jpg" }
+        ],
+        "title": "نظارة أنيقة رقم 8",
+        "simple_description": "خيار ممتاز للحماية من أشعة الشمس.",
+        "review": 5,
+        "price": 178000,
+        "available": true,
+        "description": {
+            "brand": "Focus",
+            "model": "FC-12"
+        }
+        },
+        {
+        "id": 9,
+        "images": [
+            { "img": "/images2/glasses/img9.jpg" },
+            { "img": "/images2/glasses/img1.jpg" }
+        ],
+        "title": "نظارة أنيقة رقم 9",
+        "simple_description": "تصميم فاخر يناسب مختلف الإطلالات.",
+        "review": 5,
+        "price": 210000,
+        "available": true,
+        "description": {
+            "brand": "Focus",
+            "model": "FC-13"
+        }
         }
     ],
+
+    "makeup": [
+        {
+        "id": 1,
+        "images": [
+            { "img": "/images2/makeup/img1.jpg" },
+            { "img": "/images2/makeup/img2.jpg" }
+        ],
+        "title": "مستحضر تجميل رقم 1",
+        "simple_description": "تغطية طبيعية تدوم طوال اليوم.",
+        "review": 5,
+        "price": 34000,
+        "available": true,
+        "description": {
+            "brand": "BeautyLine",
+            "model": "B-101"
+        }
+        },
+        {
+        "id": 2,
+        "images": [
+            { "img": "/images2/makeup/img2.jpg" },
+            { "img": "/images2/makeup/img3.jpg" }
+        ],
+        "title": "مستحضر تجميل رقم 2",
+        "simple_description": "إحساس خفيف على البشرة ونتيجة ناعمة.",
+        "review": 4,
+        "price": 26000,
+        "available": true,
+        "description": {
+            "brand": "BeautyLine",
+            "model": "B-102"
+        }
+        },
+        {
+        "id": 3,
+        "images": [
+            { "img": "/images2/makeup/img3.jpg" },
+            { "img": "/images2/makeup/img4.jpg" }
+        ],
+        "title": "مستحضر تجميل رقم 3",
+        "simple_description": "مناسب لجميع أنواع البشرة.",
+        "review": 5,
+        "price": 41000,
+        "available": true,
+        "description": {
+            "brand": "GlowX",
+            "model": "GX-10"
+        }
+        },
+        {
+        "id": 4,
+        "images": [
+            { "img": "/images2/makeup/img4.jpg" },
+            { "img": "/images2/makeup/img5.jpg" }
+        ],
+        "title": "مستحضر تجميل رقم 4",
+        "simple_description": "ترطيب عميق مع لمسة نهائية مثالية.",
+        "review": 4,
+        "price": 29000,
+        "available": true,
+        "description": {
+            "brand": "GlowX",
+            "model": "GX-11"
+        }
+        },
+        {
+        "id": 5,
+        "images": [
+            { "img": "/images2/makeup/img5.jpg" },
+            { "img": "/images2/makeup/img6.jpg" }
+        ],
+        "title": "مستحضر تجميل رقم 5",
+        "simple_description": "ثبات قوي بدون تكتل.",
+        "review": 5,
+        "price": 33000,
+        "available": true,
+        "description": {
+            "brand": "PrettyNow",
+            "model": "PN-21"
+        }
+        },
+        {
+        "id": 6,
+        "images": [
+            { "img": "/images2/makeup/img6.jpg" },
+            { "img": "/images2/makeup/img7.jpg" }
+        ],
+        "title": "مستحضر تجميل رقم 6",
+        "simple_description": "حماية خفيفة وإطلالة مشرقة.",
+        "review": 4,
+        "price": 37000,
+        "available": true,
+        "description": {
+            "brand": "PrettyNow",
+            "model": "PN-22"
+        }
+        },
+        {
+        "id": 7,
+        "images": [
+            { "img": "/images2/makeup/img7.jpg" },
+            { "img": "/images2/makeup/img8.jpg" }
+        ],
+        "title": "مستحضر تجميل رقم 7",
+        "simple_description": "مكونات آمنة على البشرة الحساسة.",
+        "review": 5,
+        "price": 25000,
+        "available": true,
+        "description": {
+            "brand": "ShinePro",
+            "model": "SP-01"
+        }
+        },
+        {
+        "id": 8,
+        "images": [
+            { "img": "/images2/makeup/img8.jpg" },
+            { "img": "/images2/makeup/img9.jpg" }
+        ],
+        "title": "مستحضر تجميل رقم 8",
+        "simple_description": "لون ثابت ولمسة طبيعية.",
+        "review": 5,
+        "price": 29000,
+        "available": true,
+        "description": {
+            "brand": "ShinePro",
+            "model": "SP-02"
+        }
+        },
+        {
+        "id": 9,
+        "images": [
+            { "img": "/images2/makeup/img9.jpg" },
+            { "img": "/images2/makeup/img1.jpg" }
+        ],
+        "title": "مستحضر تجميل رقم 9",
+        "simple_description": "ملمس ناعم وتوزيع سهل.",
+        "review": 4,
+        "price": 31000,
+        "available": true,
+        "description": {
+            "brand": "ShinePro",
+            "model": "SP-03"
+        }
+        }
+    ],
+
     "phones": [
         {
-            "id": 1,
-            "images": [
-                { "img": "@/public/images2/phone/img1.jpg" },
-                { "img": "@/public/images2/phone/img2.jpg" }
-            ],
-            "title": "this is title",
-            "simple_description": "this is discription",
-            "review": 5,
-            "price": 154000,
-            "available": true,
-            "description": {
-                "brand": "",
-                "model": ""
-            }
+        "id": 1,
+        "images": [
+            { "img": "/images2/phone/img1.jpg" },
+            { "img": "/images2/phone/img2.jpg" }
+        ],
+        "title": "هاتف ذكي رقم 1",
+        "simple_description": "أداء سريع وشاشة عالية الدقة.",
+        "review": 5,
+        "price": 250000,
+        "available": true,
+        "description": {
+            "brand": "TechOne",
+            "model": "T-11"
+        }
+        },
+        {
+        "id": 2,
+        "images": [
+            { "img": "/images2/phone/img2.jpg" },
+            { "img": "/images2/phone/img3.jpg" }
+        ],
+        "title": "هاتف ذكي رقم 2",
+        "simple_description": "بطارية طويلة تدوم طوال اليوم.",
+        "review": 4,
+        "price": 290000,
+        "available": true,
+        "description": {
+            "brand": "TechOne",
+            "model": "T-12"
+        }
+        },
+        {
+        "id": 3,
+        "images": [
+            { "img": "/images2/phone/img3.jpg" },
+            { "img": "/images2/phone/img4.jpg" }
+        ],
+        "title": "هاتف ذكي رقم 3",
+        "simple_description": "كاميرا عالية الجودة لصور واضحة.",
+        "review": 5,
+        "price": 320000,
+        "available": true,
+        "description": {
+            "brand": "Alpha",
+            "model": "A-31"
+        }
+        },
+        {
+        "id": 4,
+        "images": [
+            { "img": "/images2/phone/img4.jpg" },
+            { "img": "/images2/phone/img5.jpg" }
+        ],
+        "title": "هاتف ذكي رقم 4",
+        "simple_description": "تصميم أنيق وخفيف الوزن.",
+        "review": 4,
+        "price": 210000,
+        "available": true,
+        "description": {
+            "brand": "Alpha",
+            "model": "A-32"
+        }
+        },
+        {
+        "id": 5,
+        "images": [
+            { "img": "/images2/phone/img5.jpg" },
+            { "img": "/images2/phone/img6.jpg" }
+        ],
+        "title": "هاتف ذكي رقم 5",
+        "simple_description": "معالج قوي مناسب للألعاب.",
+        "review": 5,
+        "price": 340000,
+        "available": true,
+        "description": {
+            "brand": "Nova",
+            "model": "N-51"
+        }
+        },
+        {
+        "id": 6,
+        "images": [
+            { "img": "/images2/phone/img6.jpg" },
+            { "img": "/images2/phone/img7.jpg" }
+        ],
+        "title": "هاتف ذكي رقم 6",
+        "simple_description": "ذاكرة كبيرة ومساحة تخزين واسعة.",
+        "review": 4,
+        "price": 280000,
+        "available": true,
+        "description": {
+            "brand": "Nova",
+            "model": "N-52"
+        }
+        },
+        {
+        "id": 7,
+        "images": [
+            { "img": "/images2/phone/img7.jpg" },
+            { "img": "/images2/phone/img8.jpg" }
+        ],
+        "title": "هاتف ذكي رقم 7",
+        "simple_description": "صوت واضح ومكبرات قوية.",
+        "review": 5,
+        "price": 230000,
+        "available": true,
+        "description": {
+            "brand": "SmartX",
+            "model": "SX-01"
+        }
+        },
+        {
+        "id": 8,
+        "images": [
+            { "img": "/images2/phone/img8.jpg" },
+            { "img": "/images2/phone/img9.jpg" }
+        ],
+        "title": "هاتف ذكي رقم 8",
+        "simple_description": "حماية قوية ضد الصدمات.",
+        "review": 4,
+        "price": 310000,
+        "available": true,
+        "description": {
+            "brand": "SmartX",
+            "model": "SX-02"
+        }
+        },
+        {
+        "id": 9,
+        "images": [
+            { "img": "/images2/phone/img9.jpg" },
+            { "img": "/images2/phone/img1.jpg" }
+        ],
+        "title": "هاتف ذكي رقم 9",
+        "simple_description": "جودة عالية وسعر مناسب.",
+        "review": 5,
+        "price": 270000,
+        "available": true,
+        "description": {
+            "brand": "SmartX",
+            "model": "SX-03"
+        }
         }
     ],
+
     "shoes": [
         {
-            "id": 1,
-            "images": [
-                { "img": "@/public/images2/shoes/img1.jpg" },
-                { "img": "@/public/images2/shoes/img2.jpg" }
-            ],
-            "title": "this is title",
-            "simple_description": "this is discription",
-            "review": 5,
-            "price": 154000,
-            "available": true,
-            "description": {
-                "brand": "",
-                "model": ""
-            }
+        "id": 1,
+        "images": [
+            { "img": "/images2/shoes/img1.jpg" },
+            { "img": "/images2/shoes/img2.jpg" }
+        ],
+        "title": "حذاء مميز رقم 1",
+        "simple_description": "حذاء مريح مناسب للمشي اليومي.",
+        "review": 5,
+        "price": 43000,
+        "available": true,
+        "description": {
+            "brand": "WalkPro",
+            "model": "WP-11"
+        }
+        },
+        {
+        "id": 2,
+        "images": [
+            { "img": "/images2/shoes/img2.jpg" },
+            { "img": "/images2/shoes/img3.jpg" }
+        ],
+        "title": "حذاء مميز رقم 2",
+        "simple_description": "متانة ممتازة للاستخدام الطويل.",
+        "review": 4,
+        "price": 52000,
+        "available": true,
+        "description": {
+            "brand": "WalkPro",
+            "model": "WP-12"
+        }
+        },
+        {
+        "id": 3,
+        "images": [
+            { "img": "/images2/shoes/img3.jpg" },
+            { "img": "/images2/shoes/img4.jpg" }
+        ],
+        "title": "حذاء مميز رقم 3",
+        "simple_description": "تصميم أنيق يناسب مختلف الإطلالات.",
+        "review": 5,
+        "price": 61000,
+        "available": true,
+        "description": {
+            "brand": "FlexGo",
+            "model": "FG-21"
+        }
+        },
+        {
+        "id": 4,
+        "images": [
+            { "img": "/images2/shoes/img4.jpg" },
+            { "img": "/images2/shoes/img5.jpg" }
+        ],
+        "title": "حذاء مميز رقم 4",
+        "simple_description": "خامة ممتازة ومقاومة للماء.",
+        "review": 4,
+        "price": 48000,
+        "available": true,
+        "description": {
+            "brand": "FlexGo",
+            "model": "FG-22"
+        }
+        },
+        {
+        "id": 5,
+        "images": [
+            { "img": "/images2/shoes/img5.jpg" },
+            { "img": "/images2/shoes/img6.jpg" }
+        ],
+        "title": "حذاء مميز رقم 5",
+        "simple_description": "مريح جداً حتى بعد ساعات طويلة.",
+        "review": 5,
+        "price": 69000,
+        "available": true,
+        "description": {
+            "brand": "StepX",
+            "model": "SX-31"
+        }
+        },
+        {
+        "id": 6,
+        "images": [
+            { "img": "/images2/shoes/img6.jpg" },
+            { "img": "/images2/shoes/img7.jpg" }
+        ],
+        "title": "حذاء مميز رقم 6",
+        "simple_description": "وزن خفيف وأداء ممتاز.",
+        "review": 4,
+        "price": 53000,
+        "available": true,
+        "description": {
+            "brand": "StepX",
+            "model": "SX-32"
+        }
+        },
+        {
+        "id": 7,
+        "images": [
+            { "img": "/images2/shoes/img7.jpg" },
+            { "img": "/images2/shoes/img8.jpg" }
+        ],
+        "title": "حذاء مميز رقم 7",
+        "simple_description": "قاعدة ثابتة لمشي أكثر ثباتاً.",
+        "review": 5,
+        "price": 60000,
+        "available": true,
+        "description": {
+            "brand": "RunMax",
+            "model": "RM-01"
+        }
+        },
+        {
+        "id": 8,
+        "images": [
+            { "img": "/images2/shoes/img8.jpg" },
+            { "img": "/images2/shoes/img9.jpg" }
+        ],
+        "title": "حذاء مميز رقم 8",
+        "simple_description": "مناسب للرياضة والجري.",
+        "review": 4,
+        "price": 72000,
+        "available": true,
+        "description": {
+            "brand": "RunMax",
+            "model": "RM-02"
+        }
+        },
+        {
+        "id": 9,
+        "images": [
+            { "img": "/images2/shoes/img9.jpg" },
+            { "img": "/images2/shoes/img1.jpg" }
+        ],
+        "title": "حذاء مميز رقم 9",
+        "simple_description": "متعدد الاستخدامات ويقدم ثباتاً ممتازاً.",
+        "review": 5,
+        "price": 75000,
+        "available": true,
+        "description": {
+            "brand": "RunMax",
+            "model": "RM-03"
+        }
         }
     ]
 }

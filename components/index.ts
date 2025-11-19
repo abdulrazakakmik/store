@@ -10,6 +10,9 @@ import Section4 from "./Section4";
 import According from "./According";
 import Footer from "./Footer";
 import PreFooter from "./PreFooter";
+import ImageFocus from './ImageFocus'
+import CountBtn from "./CountBtn";
+import RelateSection4 from "./RelateSection4";
 
 export {
     Carousel,
@@ -24,4 +27,7 @@ export {
     According,
     Footer,
     PreFooter,
+    ImageFocus,
+    CountBtn,
+    RelateSection4,
 }

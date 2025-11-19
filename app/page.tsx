@@ -4,16 +4,12 @@ import {Hero, Redsection, Section2, Offer, Section3, Brands, Section4, Footer, P
 import { useMemo } from "react";
 
 import * as productImgs from "@/public/images2/products/index";
-import * as shoeImgs from "@/public/images2/shoes/index";
 import * as glassesImgs from "@/public/images2/glasses/index";
 import * as phoneImgs from "@/public/images2/phone/index";
 import * as makeupImgs from "@/public/images2/makeup/index";
 import * as secondSectionImgs from "@/public/images2/second_section";
 import * as brandImgs from "@/public/images2/brands";
-
-import products from '@/data/products.json'
-
-// console.log(JSON.parse(products))
+import * as shoeImgs from "@/public/images2/shoes/index";
 
 function getRandomIntInclusive(min: number, max: number) {
   return Math.floor(Math.random() * (max - min + 1)) + min;

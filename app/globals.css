@@ -36,4 +36,13 @@
   .buy-btn{
     @apply w-full hover:opacity-80 transition-all duration-300 text-white rounded-b-2xl bg-black opacity-70 p-3 cursor-pointer flex items-center justify-center text-xs relative overflow-hidden
   }
+  .manage-btn{
+    @apply  px-2 border-gray-300 h-full cursor-pointer transition-all duration-300 hover:text-white hover:bg-gray-400 w-7
+  }
+  .add-btn{
+    @apply flex cursor-pointer justify-center items-center bg-black/80 text-white w-full py-3 text-sm rounded-md hover:opacity-80 transition-all
+  }
+  .circle{
+    @apply size-40 rounded-full border-2 border-black bg-red-400 absolute pointer-events-none transition-none
+  }
 }
