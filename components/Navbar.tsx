@@ -1,10 +1,13 @@
 'use client';
 
-import React, { useState } from 'react';
-import { ChartArea, Menu, MessageCircle, PhoneCall, Search, Settings, ShoppingBasket, X } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { ChartArea, Menu, MessageCircle, PhoneCall, Search, Settings, ShoppingBasket, Trash, X } from 'lucide-react';
 import Image from 'next/image';
 import { logo } from '@/public/images2/brands';
 import Link from 'next/link';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '@/app/store';
+import { increaseQuantity, decreaseQuantity, clearCart, removerFromCart } from '@/features/cart/cartSlice';
 
 const links = [
   { link: 'الماركات الحصرية', href: '#' },
@@ -17,6 +20,17 @@ const links = [
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
+    const value = useSelector((state: RootState) => state.cart.items)
+    const dispatch = useDispatch();
+    const [cartOpen, setCartOpen] = useState(false);
+    
+    useEffect(() => {
+        if (value.length === 0 && cartOpen){
+            const timeout = setTimeout(() => setCartOpen(false), 0);
+            return () => clearTimeout(timeout);
+        }
+    }, [value, cartOpen]);
+
     return (
         <header className="relative z-50">
             <div className='hidden text-white text-xs p-4 items-center justify-between md:flex bg-linear-to-r from-[#8712A1] to-[#2F17A0]'>
@@ -48,11 +62,81 @@ const Navbar = () => {
                         <button>
                             <Settings onClick={() => setOpen(true)} className="cursor-pointer text-white p-2 bg-gray-400 size-14 hover:opacity-60" size={10} />
                         </button>
-                        <button className='basket'>
-                            <span className='absolute size-6 text-green-400 bg-white rounded-full -top-3 right-7 flex items-center justify-center'>0</span>
+                        <button className='basket relative' onClick={() => setCartOpen((v) => !v)}>
+                            <span className='absolute -top-3 right-7 flex size-6 items-center justify-center rounded-full bg-white text-green-400'>
+                                {value.reduce((t, i) => t + i.quantity, 0)}
+                            </span>
                             <ShoppingBasket />
                             <p>السلة الخاصة بي</p>
                         </button>
+                        {cartOpen && (
+                        <div className='absolute left-10 bg-primary shadow-2xl shadow-black border-2 border-primary w-[250px] p-1 top-29'>
+                            <div
+                                id="cart"
+                                className="bg-white w-full flex flex-col text-sm text-gray-800"
+                                >
+                                {/* HEADER */}
+                                <div className="flex items-center justify-between p-3 border-b">
+                                    <span className="font-bold">سلة المشتريات</span>
+                                    <span className="text-xs bg-primary text-white px-2 py-1 rounded-full">
+                                    {value.reduce((t, i) => t + i.quantity, 0)}
+                                    </span>
+                                </div>
+
+                                {/* ITEMS */}
+                                <div className="flex-1 overflow-y-auto max-h-64">
+                                    {value.length === 0 ? (
+                                    <p className="text-center text-gray-400 p-4">السلة فارغة</p>
+                                    ) : (
+                                    value.map((item) => (
+                                        <div key={item.id} className="flex justify-between items-center gap-2 p-2 border-b hover:bg-gray-50">
+                                            <Image src={item.image} width={50} height={50} alt={item.title} className="size-14 object-cover rounded"/>
+                                            <div className="text-right">
+                                                <p className="text-xs text-gray-500"> {(item.price * item.quantity).toLocaleString()} ل.س</p>
+                                            </div>
+                                            <div className="flex justify-between items-center gap-2">
+                                                <span className="w-6 text-center text-xs">{item.quantity}</span>
+                                                <div className='flex flex-col gap-1'>
+                                                    <button onClick={() => dispatch(increaseQuantity(item.id))} className="basket-increase-btn">+</button>
+                                                    <button onClick={() => dispatch(decreaseQuantity(item.id))} className="basket-increase-btn">-</button>
+                                                </div>
+                                                <button onClick={() => dispatch(removerFromCart(item.id))} className="trush-btn"> <Trash size={20} /> </button>
+                                            </div>
+                                        </div>
+                                    ))
+                                    )}
+                                </div>
+
+                                {/* FOOTER */}
+                                {value.length > 0 && (
+                                    <div className="p-3 border-t space-y-2">
+                                        <div className="flex justify-between text-xs">
+                                        <span>الإجمالي</span>
+                                        <span className="font-bold">
+                                            {value.reduce((t, i) => t + i.price * i.quantity, 0).toLocaleString()} ل.س
+                                        </span>
+                                        </div>
+
+                                        {/* إفراغ السلة */}
+                                        <button
+                                        onClick={() => dispatch(clearCart())}
+                                        className="block w-full text-center text-xs text-red-600 underline hover:text-red-800"
+                                        >
+                                        إفراغ السلة
+                                        </button>
+
+                                        <Link
+                                        href="/cart"
+                                        className="block w-full text-center bg-primary text-white py-2 rounded hover:opacity-90"
+                                        onClick={() => setOpen(false)}
+                                        >
+                                        إتمام الطلب
+                                        </Link>
+                                    </div>
+                                    )}
+                                </div>
+                        </div>
+                        )}
                     </div>
                 </div>
 

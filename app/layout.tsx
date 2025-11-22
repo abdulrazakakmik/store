@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Bebas_Neue } from "next/font/google";
-import "./globals.css";
+import "./globals.css"
 import PrelineScriptWrapper from '../components/PrelineScriptWrapper';
 import { Navbar } from "@/components/index";
-
+import { ReduxProvider } from "./providers";
 
 const bebasNeue = Bebas_Neue({
   variable: "--font-bebas-neue",
@@ -23,11 +23,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${bebasNeue.variable} antialiased max-w-3xl lg:max-w-5xl xl:max-w-[1930PX] m-auto`}
-      >
-        <Navbar />
-        {children}
+      <body className={`${bebasNeue.variable} antialiased max-w-3xl lg:max-w-5xl xl:max-w-[1930px] m-auto`} cz-shortcut-listen="true">
+        <ReduxProvider>
+          <Navbar />
+          {children}
+        </ReduxProvider>
         <PrelineScriptWrapper />
       </body>
     </html>

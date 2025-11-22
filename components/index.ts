@@ -10,9 +10,10 @@ import Section4 from "./Section4";
 import According from "./According";
 import Footer from "./Footer";
 import PreFooter from "./PreFooter";
-import ImageFocus from './ImageFocus'
-import CountBtn from "./CountBtn";
-import RelateSection4 from "./RelateSection4";
+import ImageFocus from './categoryId/ImageFocus'
+import CountBtn from "./categoryId/CountBtn";
+import RelateSection4 from "./categoryId/RelateSection4";
+import Buybtn from './Buybtn'
 
 export {
     Carousel,
@@ -30,4 +31,5 @@ export {
     ImageFocus,
     CountBtn,
     RelateSection4,
+    Buybtn
 }

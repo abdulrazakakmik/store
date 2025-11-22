@@ -1,42 +1,8 @@
-import { According, CountBtn, Footer, ImageFocus, PreFooter, RelateSection4, Section4 } from '@/components';
+import { According, Buybtn, Footer, PreFooter} from '@/components';
+import {CountBtn, ImageFocus, RelateSection4 } from '@/components/categoryId'
 import { Heart, Mail, RecycleIcon, Star, Truck } from 'lucide-react';
 import products from '@/data/products.json';
 import { Product } from '@/types';
-import * as shoeImgs from "@/public/images2/shoes/index";
-import Link from 'next/link';
-
-interface Props {
-  images: Record<string, any>;
-  titlePrefix: string;
-  min: number;
-  max: number;
-  discount: number;
-  link: string
-}
-
-function getRandomIntInclusive(min: number, max: number) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-function generateProducts({images, titlePrefix, min, max, discount, link}: Props) {
-  return Object.values(images).map((img, i) => ({
-    id: i + 1,
-    img,
-    title: `${titlePrefix} ${i + 1}`,
-    cost: getRandomIntInclusive(min, max),
-    discount,
-    link: `${link}/${i + 1}`
-  }));
-}
-const productsShoes = generateProducts({
-      images: shoeImgs,
-      titlePrefix: "حذاء مميز رقم",
-      min: 20000,
-      max: 300000,
-      discount: 0.1,
-      link: '/shoes'
-    });
-
 
 type CategoryKey = keyof typeof products;
 
@@ -93,30 +59,26 @@ const Page = async ({ params }: Props) => {
         </div>
 
         {/* MIDDLE CONTENT */}
-        <div className="col-span-4 sm:col-span-2 lg:border lg:p-2 lg:rounded-2xl lg:h-fit mb-30 relative">
+        <div className="col-span-4 sm:col-span-2 lg:border lg:p-2 lg:rounded-md lg:h-fit mb-30 relative">
           {/* TITLE */}
           <h1 className="text-right font-bold text-xl px-6">{product.title}</h1>
 
           {/* REVIEWS */}
           <div className="w-full items-center flex justify-between px-6 mt-3">
-            <p className="text-[10px] text-gray-400 flex-1 text-right mr-10">
-              REVIEWS {product.review}
-            </p>
+            <p className="text-[10px] text-gray-400 flex-1 text-right mr-10"> REVIEWS {product.review} </p>
             <div className="flex">
-              {[...Array(product.review)].map((_, i) => (
-                <Star key={i} size={18} className="text-yellow-400" />
-              ))}
+              {[...Array(product.review)].map((_, i) => ( <Star key={i} size={18} className="text-yellow-400" /> ))}
             </div>
           </div>
 
           {/* AVAILABILITY */}
           <div className="w-full items-center flex justify-between px-6 mt-3">
             <p className="text-[10px] text-right mr-10 w-full">
-              {product.available ? (
-                <span className="text-green-600 font-bold">متوفر</span>
-              ) : (
-                <span className="text-red-500 font-bold">غير متوفر</span>
-              )}
+              {
+                product.available 
+                ? ( <span className="text-green-600 font-bold">متوفر</span> ) 
+                : ( <span className="text-red-500 font-bold">غير متوفر</span> )
+              }
             </p>
             <div className="flex">:التوفر</div>
           </div>
@@ -149,7 +111,7 @@ const Page = async ({ params }: Props) => {
                 <div> <p className="text-[10px] text-right mb-2">الكمية :</p> <CountBtn /> </div>
               </div>
 
-              <div className="py-4"> <button className="add-btn"> أضف للسلة </button> </div>
+              <div className="py-4"> <Buybtn product={product} className='add-btn' /> </div>
             </div>
             <div className='px-6 mt-5'>
               <p className='flex justify-between items-center text-black py-2'><Truck color='purple' /> <span className='text-[10px]'>التوصيل ضمن دمشق وحمص وطرطوس واللاذقية وحلب والسويداء</span></p>

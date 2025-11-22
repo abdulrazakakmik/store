@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import Section4 from './Section4'
+import Section4 from '../Section4'
 import { useMemo } from 'react'
 import * as shoeImgs from "@/public/images2/shoes/index";
 import * as glassesImgs from "@/public/images2/glasses/index";
@@ -121,13 +121,7 @@ const RelateSection4 = () => {
       
       {/* PRODUCTS SECTION */}
       <div className='col-span-4'>
-        <Section4 
-          products={selectedProducts}
-          header={selectedHeader}
-          show={false}
-          two={false}
-          header2="منتجات مقترحة لك"
-        />
+        <Section4 products={selectedProducts} header={selectedHeader} show={false} two={false} header2="منتجات مقترحة لك" />
       </div>
 
       {/* RIGHT SIDE RELATED LINKS */}

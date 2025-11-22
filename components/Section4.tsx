@@ -5,10 +5,11 @@ import Carousel from './Carousel'
 import Link from 'next/link'
 
 interface Product {
-  img: StaticImageData
-  title: string
-  cost: number
-  discount: number
+    img: StaticImageData
+    title: string
+    cost: number
+    discount: number,
+    link: string
 }
 
 interface Props {
@@ -59,15 +60,15 @@ const Section4 = ({header="Products", products, show=false, two=false, header2='
                     <div className='m-auto rounded-2xl'>
                         <div className="grid justify-center mt-3 max-h-[450px] overflow-hidden grid-cols-[repeat(auto-fill,210px)] gap-3">
                             {products.map((product, index) => {
-                                const discountedPrice = product.cost * (1 - product.discount)
-                                const discountAmount = product.cost - discountedPrice
+                                const discountedPriceNumber = Number((product.cost * (1 - product.discount)).toFixed(0));
+                                const discountAmountNumber = Number((product.cost - discountedPriceNumber).toFixed(0));
 
                                 return (
                                     <div key={index} className="border border-gray-300 rounded-2xl relative bg-white">
                                         <div className="relative w-full h-64 rounded-t-2xl group overflow-hidden">
                                             <Link href={product.link}><Image src={product.img} alt={product.title} fill className="object-cover max-h-64 rounded-t-2xl hover:rounded-2xl group-hover:rounded-2xl transition-all duration-300 shadow-2xl hover:scale-90" sizes="80px" /></Link>
                                             <span className="absolute bg-red-500 text-white flex flex-row-reverse gap-1 text-xs right-2 top-2 rounded-tl-2xl rounded-br-2xl px-2 py-0.5">
-                                                {Number(discountAmount.toFixed(0)).toLocaleString()} <span>ل.س</span>
+                                                {discountAmountNumber.toLocaleString("en-US")} <span>ل.س</span>
                                             </span>
                                         </div>
 
@@ -78,8 +79,8 @@ const Section4 = ({header="Products", products, show=false, two=false, header2='
                                                     {product.title} 
                                                 </p>
                                             </Link>
-                                            <p className="text-orange-700 mt-2 font-bold flex flex-row-reverse text-sm"> {Number(discountedPrice.toFixed(0)).toLocaleString()} <span>ل.س</span> </p>
-                                            <p className="line-through text-gray-400 text-xs" > {Number(product.cost.toFixed(0)).toLocaleString()} ل.س </p>
+                                            <p className="text-orange-700 mt-2 font-bold flex flex-row-reverse text-sm"> {discountedPriceNumber.toLocaleString("en-US")} <span>ل.س</span> </p>
+                                            <p className="line-through text-gray-400 text-xs" > {Number(product.cost.toFixed(0)).toLocaleString("en-US")} ل.س </p>
                                         </div>
 
                                         <div className="flex flex-row-reverse p-2 justify-center gap-4 mt-2 text-gray-400 text-xs">
@@ -111,15 +112,15 @@ const Section4 = ({header="Products", products, show=false, two=false, header2='
                                 <div className='m-auto rounded-2xl'>
                                     <div className="grid justify-center mt-3 max-h-[450px] overflow-hidden grid-cols-[repeat(auto-fill,210px)] gap-3">
                                         {products.map((product, index) => {
-                                            const discountedPrice = product.cost * (1 - product.discount)
-                                            const discountAmount = product.cost - discountedPrice
+                                            const discountedPriceNumber = Number((Number(product.cost) * (1 - Number(product.discount))).toFixed(0));
+                                            const discountAmountNumber = Number((product.cost - discountedPriceNumber).toFixed(0));
 
                                             return (
                                                 <div key={index} className="border border-gray-300 rounded-2xl relative bg-white">
                                                     <div className="relative w-full h-64 rounded-t-2xl group overflow-hidden">
                                                         <Link href={product.link}><Image src={product.img} alt={product.title} fill className="object-cover max-h-64 rounded-t-2xl hover:rounded-2xl group-hover:rounded-2xl transition-all duration-300 shadow-2xl hover:scale-90" sizes="80px" /></Link>
                                                         <span className="absolute bg-red-500 text-white flex flex-row-reverse gap-1 text-xs right-2 top-2 rounded-tl-2xl rounded-br-2xl px-2 py-0.5">
-                                                            {Number(discountAmount.toFixed(0)).toLocaleString()} <span>ل.س</span>
+                                                            {discountAmountNumber.toLocaleString("en-US")} <span>ل.س</span>
                                                         </span>
                                                     </div>
 
@@ -130,8 +131,8 @@ const Section4 = ({header="Products", products, show=false, two=false, header2='
                                                                 {product.title} 
                                                             </p>
                                                         </Link>
-                                                        <p className="text-orange-700 mt-2 font-bold flex flex-row-reverse text-sm"> {Number(discountedPrice.toFixed(0)).toLocaleString()} <span>ل.س</span> </p>
-                                                        <p className="line-through text-gray-400 text-xs" > {Number(product.cost.toFixed(0)).toLocaleString()} ل.س </p>
+                                                        <p className="text-orange-700 mt-2 font-bold flex flex-row-reverse text-sm"> {discountedPriceNumber.toLocaleString("en-US")} <span>ل.س</span> </p>
+                                                        <p className="line-through text-gray-400 text-xs" > {Number(product.cost.toFixed(0)).toLocaleString("en-US")} ل.س </p>
                                                     </div>
 
                                                     <div className="flex flex-row-reverse p-2 justify-center gap-4 mt-2 text-gray-400 text-xs">
